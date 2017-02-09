@@ -119,7 +119,7 @@ OverpassAPI.prototype.loadDiff = function(from, to, relations, postLoadCallback,
 
     var data_url = 'https://overpass-api.de/api/interpreter';
     url = data_url + '?data=[adiff:' + dateRange
-        + '];(node(bbox)(changed);way(bbox)(changed);' + (relations ? 'relation(bbox)(changed);' : '') + ');out meta geom(bbox);';
+        + '];(node["playground"](bbox)(changed);waynode["playground"](bbox)(changed);' + (relations ? 'relation(bbox)(changed);' : '') + ');out meta geom(bbox);';
 
     if (!this.bbox) {
       this.bbox = this.bboxControl.addBBoxFromViewPort();
